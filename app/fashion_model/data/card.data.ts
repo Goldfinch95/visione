@@ -11,7 +11,7 @@ export const modelCards: ModelCard[] = [
   },
   {
     id: 2,
-    image: '/models/model_two.jpg',
+    image: '/models/model_three.jpg',
     category: 'Monturas graduadas',
     title: 'Mujer',
     label: 'Monturas · Mujer',
@@ -19,7 +19,7 @@ export const modelCards: ModelCard[] = [
   },
   {
     id: 3,
-    image: '/models/model_three.jpg',
+    image: '/models/model_two.jpg',
     category: 'Lentes de sol',
     title: 'Hombre',
     label: 'Lentes de sol · Hombre',
