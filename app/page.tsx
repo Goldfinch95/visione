@@ -3,6 +3,7 @@ import { Hero } from "./hero/components/Hero";
 import { ModelsGrid } from "./fashion_model/components/Models_Grid";
 import { OutStandingSection } from "./outstanding/components/Images_Section";
 import { ProductSection } from "./catalog/components/Product_Section";
+import { BrandSection } from "./brands/components/Brand_Section";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ModelsGrid />
       <OutStandingSection />
       <ProductSection />
+      <BrandSection />
     </main>
   );
 }
