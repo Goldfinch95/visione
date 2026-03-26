@@ -4,12 +4,20 @@ import { BestsellerCardItem } from './Product_Card'
 import { bestsellerCards } from '../data/product.data'
 
 export function BestsellersTrack() {
-  // Duplicamos el array para el loop infinito
   const cards = [...bestsellerCards, ...bestsellerCards]
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="flex gap-[2px] w-max animate-scroll-left hover:[animation-play-state:paused]">
+      <div
+        style={{
+          display: 'flex',
+          gap: '2px',
+          width: 'max-content',
+          animation: 'scroll-left 30s linear infinite',
+        }}
+        onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'paused')}
+        onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'running')}
+      >
         {cards.map((card, i) => (
           <BestsellerCardItem key={`${card.id}-${i}`} card={card} />
         ))}
