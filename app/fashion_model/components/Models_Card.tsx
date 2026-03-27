@@ -21,7 +21,7 @@ export function ModelCardItem({ card, index, isVisible }: ModelCardItemProps) {
         ease: [0.25, 0.46, 0.45, 0.94],
         delay: index * 0.12,
       }}
-      className="relative overflow-hidden cursor-pointer block group aspect-[3/4]"
+      className="relative overflow-hidden cursor-pointer block group aspect-auto h-full sm:aspect-[3/4]"
     >
       {/* Image */}
       <Image
@@ -29,18 +29,18 @@ export function ModelCardItem({ card, index, isVisible }: ModelCardItemProps) {
         alt={`${card.category} - ${card.title}`}
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-        sizes="25vw"
+        sizes="(max-width: 768px) 50vw, 25vw"
       />
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
       {/* Text */}
-      <div className="absolute bottom-0 left-0 right-0 p-5 pb-6">
-        <p className="font-raleway text-[8px] tracking-[2.5px] uppercase text-white/60 font-light mb-1.5">
+      <div className="absolute bottom-0 left-0 right-0 p-3 pb-4 sm:p-4 sm:pb-5 lg:p-5 lg:pb-6">
+        <p className="font-raleway text-[7px] sm:text-[8px] tracking-[2px] sm:tracking-[2.5px] uppercase text-white/60 font-light mb-1 sm:mb-1.5">
           {card.category}
         </p>
-        <h3 className="font-cormorant text-[22px] font-light text-white tracking-wide">
+        <h3 className="font-cormorant text-[18px] sm:text-[20px] lg:text-[22px] font-light text-white tracking-wide">
           {card.title}
         </h3>
       </div>

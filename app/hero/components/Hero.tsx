@@ -10,7 +10,7 @@ export function Hero() {
   const { current, goTo, next, prev } = useCarousel(heroSlides.length, 5000)
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-neutral-900">
+    <section className="relative w-full h-[100svh] overflow-hidden bg-neutral-900">
       {heroSlides.map((slide, i) => (
         <HeroSlideItem
           key={slide.id}
@@ -19,7 +19,11 @@ export function Hero() {
         />
       ))}
 
-      <CarouselArrows onPrev={prev} onNext={next} />
+      {/* Arrows — solo tablet y desktop */}
+      <div className="hidden md:block">
+        <CarouselArrows onPrev={prev} onNext={next} />
+      </div>
+
       <CarouselDots total={heroSlides.length} current={current} onGoTo={goTo} />
     </section>
   )
