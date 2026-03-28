@@ -8,10 +8,10 @@ export function OutStandingSection() {
   const { ref, isVisible } = useScrollReveal(0.2)
 
   return (
-    <section className="w-full py-20 bg-white">
+    <section className="w-full py-12 sm:py-16 lg:py-20 bg-white">
       <div
         ref={ref}
-        className="grid grid-cols-2 gap-[2px]"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-[2px]"
       >
         {duoItems.map((item, i) => (
           <DuoCardItem

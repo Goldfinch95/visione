@@ -12,10 +12,12 @@ export function BrandTrack() {
         style={{
           display: 'flex',
           width: 'max-content',
-          animation: 'scroll-brands 28s linear infinite',
+          animation: 'scroll-brands 20s linear infinite',
         }}
         onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'paused')}
         onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'running')}
+        onTouchStart={e => (e.currentTarget.style.animationPlayState = 'paused')}
+        onTouchEnd={e => (e.currentTarget.style.animationPlayState = 'running')}
       >
         {items.map((brand, i) => (
           <BrandItemEl key={`${brand.id}-${i}`} brand={brand} />

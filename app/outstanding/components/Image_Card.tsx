@@ -24,18 +24,18 @@ export function DuoCardItem({ item, index, isVisible }: DuoCardItemProps) {
       className="block cursor-pointer"
     >
       {/* Image container */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden">
+      <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] overflow-hidden">
         <Image
           src={item.image}
           alt={item.alt}
           fill
           className="object-cover transition-transform duration-700 ease-out hover:scale-[1.04]"
-          sizes="50vw"
+          sizes="(max-width: 640px) 100vw, 50vw"
         />
       </div>
 
       {/* Label */}
-      <p className="text-center font-raleway text-[12px] tracking-[0.5px] text-neutral-500 font-light pt-4">
+      <p className="text-center font-raleway text-[11px] sm:text-[12px] tracking-[0.5px] text-neutral-500 font-light pt-3 sm:pt-4">
         {item.label}
       </p>
     </motion.a>

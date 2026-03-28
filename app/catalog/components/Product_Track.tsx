@@ -13,10 +13,12 @@ export function BestsellersTrack() {
           display: 'flex',
           gap: '2px',
           width: 'max-content',
-          animation: 'scroll-left 30s linear infinite',
+          animation: 'scroll-left 20s linear infinite',
         }}
         onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'paused')}
         onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'running')}
+        onTouchStart={e => (e.currentTarget.style.animationPlayState = 'paused')}
+        onTouchEnd={e => (e.currentTarget.style.animationPlayState = 'running')}
       >
         {cards.map((card, i) => (
           <BestsellerCardItem key={`${card.id}-${i}`} card={card} />
