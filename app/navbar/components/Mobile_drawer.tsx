@@ -36,7 +36,7 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
         {/* Scrollable content */}
         <div className="flex-1 overflow-y-auto px-7 pt-8 pb-6">
 
-          <p className="font-raleway text-[9px] tracking-[3px] uppercase text-red-700 font-semibold mb-4">
+          <p className="font-raleway text-2xl tracking-[3px] uppercase text-red-700 font-semibold mb-4">
             Menú
           </p>
 
@@ -51,7 +51,7 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
                   className="flex items-center justify-between py-[13px] border-b border-neutral-100 cursor-pointer group"
                 >
                   <span className={`
-                    font-cormorant text-[22px] font-light tracking-[1px] transition-colors duration-150
+                    font-cormorant text-xl font-light tracking-[1px] transition-colors duration-150
                     ${isExpanded ? 'text-red-700' : 'text-neutral-900 group-hover:text-red-700'}
                   `}>
                     {link.label.charAt(0) + link.label.slice(1).toLowerCase()}
@@ -75,7 +75,7 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
                   >
                     {link.megaMenu!.columns.map((col) => (
                       <div key={col.title} className="mb-3">
-                        <p className="font-raleway text-[9px] tracking-[2.5px] uppercase text-red-700 font-semibold mb-2">
+                        <p className="font-raleway text-xl tracking-[2.5px] uppercase text-red-700 font-semibold mb-2">
                           {col.title}
                         </p>
                         {col.links.map((subLink) => (
@@ -83,7 +83,7 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
                             key={subLink.label}
                             href={subLink.href}
                             onClick={onClose}
-                            className="block font-raleway text-[13px] text-neutral-500 py-[7px] border-b border-neutral-100 last:border-none tracking-[0.3px] hover:text-red-700 transition-colors duration-150 no-underline"
+                            className="block font-raleway text-base text-neutral-500 py-[7px] border-b border-neutral-100 last:border-none tracking-[0.3px] hover:text-red-700 transition-colors duration-150 no-underline"
                           >
                             {subLink.label}
                           </a>
@@ -109,20 +109,20 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
               py-[14px] transition-colors duration-200 no-underline
             "
           >
-            <FontAwesomeIcon icon={faCalendarCheck} className="text-xs" />
-            Prendre Rendez-Vous
+            <FontAwesomeIcon icon={faCalendarCheck} className="text-xl" />
+              Contactanos
           </a>
 
           <div className="flex items-center gap-2 mt-[14px]">
             <FontAwesomeIcon icon={faLocationDot} className="text-[13px] text-neutral-300" />
-            <span className="font-raleway text-[11px] text-neutral-400 font-light">
+            <span className="font-raleway text-base text-neutral-400 font-light">
               Av. Santa Fe 1234, Buenos Aires
             </span>
           </div>
 
           <div className="flex items-center gap-2 mt-[10px]">
             <FontAwesomeIcon icon={faPhone} className="text-[13px] text-neutral-300" />
-            <span className="font-raleway text-[11px] text-neutral-400 font-light">
+            <span className="font-raleway text-base text-neutral-400 font-light">
               +54 11 4321-5678
             </span>
           </div>
