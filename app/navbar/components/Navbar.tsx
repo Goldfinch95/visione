@@ -46,15 +46,6 @@ export function Navbar() {
             </a>
 
             <div className="flex items-center gap-3">
-              <div className="relative">
-                <FontAwesomeIcon
-                  icon={faEye}
-                  className={`text-lg transition-colors duration-250 ${isDark ? 'text-white/80' : 'text-neutral-600'}`}
-                />
-                <span className="absolute -top-1.5 -right-1.5 bg-red-700 text-white text-xs w-3.5 h-3.5 rounded-full flex items-center justify-center font-raleway leading-none">
-                  0
-                </span>
-              </div>
               <Hamburger isOpen={mobileOpen} onToggle={toggleMobile} isDark={isDark} />
             </div>
           </div>
