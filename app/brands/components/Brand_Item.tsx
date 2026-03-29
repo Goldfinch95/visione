@@ -3,9 +3,9 @@
 import { BrandItem } from '../types/brand.types'
 
 const styleMap: Record<BrandItem['style'], string> = {
-  serif:        'font-cormorant text-[15px] sm:text-[17px] font-light tracking-[4px]',
-  sans:         'font-raleway text-[10px] sm:text-[11px] font-normal tracking-[3.5px]',
-  'sans-light': 'font-raleway text-[10px] sm:text-[11px] font-light tracking-[4px]',
+  serif:        'font-cormorant text-xl sm:text-2xl font-light tracking-[4px]',
+  sans:         'font-raleway text-sm sm:text-base font-normal tracking-[3.5px]',
+  'sans-light': 'font-raleway text-sm sm:text-base font-light tracking-[4px]',
 }
 
 export function BrandItemEl({ brand }: { brand: BrandItem }) {

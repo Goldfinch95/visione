@@ -23,7 +23,7 @@ export function DuoCardItem({ item, index, isVisible }: DuoCardItemProps) {
       }}
       className="block cursor-pointer"
     >
-      {/* Image container */}
+      {/* Image */}
       <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] overflow-hidden">
         <Image
           src={item.image}
@@ -35,7 +35,7 @@ export function DuoCardItem({ item, index, isVisible }: DuoCardItemProps) {
       </div>
 
       {/* Label */}
-      <p className="text-center font-raleway text-[11px] sm:text-[12px] tracking-[0.5px] text-neutral-500 font-light pt-3 sm:pt-4">
+      <p className="text-center font-raleway text-sm tracking-[0.5px] text-neutral-500 font-light pt-3 sm:pt-4">
         {item.label}
       </p>
     </motion.a>

@@ -8,7 +8,7 @@ export function BrandSection() {
 
       {/* Header */}
       <div className="text-center mb-7 sm:mb-9">
-        <p className="font-raleway text-[9px] tracking-[4px] uppercase text-red-700 font-medium">
+        <p className="font-raleway text-xs tracking-[4px] uppercase text-red-700 font-medium">
           Marcas oficiales
         </p>
       </div>

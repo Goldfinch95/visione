@@ -37,21 +37,21 @@ export function BestsellerCardItem({ card }: BestsellerCardItemProps) {
 
       {/* Info */}
       <div className="pt-2.5 sm:pt-3 px-1">
-        <p className="font-raleway text-[10px] sm:text-[11px] font-normal text-neutral-500 tracking-[0.3px] mb-1.5 line-clamp-1">
+        <p className="font-raleway text-sm font-normal text-neutral-500 tracking-[0.3px] mb-1.5 line-clamp-1">
           {card.name}
         </p>
         <div className="flex items-center gap-2">
           {card.originalPrice && (
-            <span className="font-raleway text-[10px] sm:text-[11px] font-light text-neutral-300 line-through">
+            <span className="font-raleway text-sm font-light text-neutral-300 line-through">
               {formatARS(card.originalPrice)}
             </span>
           )}
           {card.originalPrice ? (
-            <span className="font-raleway text-[11px] sm:text-[12px] font-semibold text-white bg-[#2a7a52] px-2 py-[2px] tracking-[0.3px]">
+            <span className="font-raleway text-sm font-semibold text-white bg-[#2a7a52] px-2 py-[2px] tracking-[0.3px]">
               {formatARS(card.price)}
             </span>
           ) : (
-            <span className="font-raleway text-[11px] sm:text-[12px] font-medium text-neutral-800">
+            <span className="font-raleway text-sm font-medium text-neutral-800">
               {formatARS(card.price)}
             </span>
           )}

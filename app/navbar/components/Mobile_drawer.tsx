@@ -33,10 +33,11 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
-        {/* Scrollable content */}
+        {/* Scrollable links */}
         <div className="flex-1 overflow-y-auto px-7 pt-8 pb-6">
 
-          <p className="font-raleway text-2xl tracking-[3px] uppercase text-red-700 font-semibold mb-4">
+          {/* Eyebrow */}
+          <p className="font-raleway text-xs tracking-[3px] uppercase text-red-700 font-semibold mb-4">
             Menú
           </p>
 
@@ -46,36 +47,41 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
 
             return (
               <div key={link.label}>
+
+                {/* Link principal */}
                 <div
                   onClick={() => hasSub ? onToggleSub(link.label) : onClose()}
-                  className="flex items-center justify-between py-[13px] border-b border-neutral-100 cursor-pointer group"
+                  className="flex items-center justify-between py-3 border-b border-neutral-100 cursor-pointer group min-h-[44px]"
                 >
                   <span className={`
-                    font-cormorant text-xl font-light tracking-[1px] transition-colors duration-150
+                    font-cormorant text-2xl font-light tracking-wide transition-colors duration-150
                     ${isExpanded ? 'text-red-700' : 'text-neutral-900 group-hover:text-red-700'}
                   `}>
                     {link.label.charAt(0) + link.label.slice(1).toLowerCase()}
                   </span>
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className={`text-[11px] transition-all duration-200 ${
-                      isExpanded ? 'text-red-700 rotate-90' : 'text-neutral-300'
-                    } ${!hasSub ? 'opacity-0' : ''}`}
-                  />
+                  {hasSub && (
+                    <FontAwesomeIcon
+                      icon={faChevronRight}
+                      className={`text-xs transition-all duration-200 ${
+                        isExpanded ? 'text-red-700 rotate-90' : 'text-neutral-300'
+                      }`}
+                    />
+                  )}
                 </div>
 
                 {/* Submenu */}
                 {hasSub && (
                   <div
                     className={`
-                      overflow-hidden transition-all duration-300 ease-in-out -mx-7 px-7
-                      bg-neutral-50
+                      overflow-hidden transition-all duration-300 ease-in-out
+                      -mx-7 px-7 bg-neutral-50
                       ${isExpanded ? 'max-h-[400px] py-3' : 'max-h-0'}
                     `}
                   >
                     {link.megaMenu!.columns.map((col) => (
                       <div key={col.title} className="mb-3">
-                        <p className="font-raleway text-xl tracking-[2.5px] uppercase text-red-700 font-semibold mb-2">
+                        {/* Título de columna */}
+                        <p className="font-raleway text-xs tracking-[2.5px] uppercase text-red-700 font-semibold mb-2">
                           {col.title}
                         </p>
                         {col.links.map((subLink) => (
@@ -83,7 +89,13 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
                             key={subLink.label}
                             href={subLink.href}
                             onClick={onClose}
-                            className="block font-raleway text-base text-neutral-500 py-[7px] border-b border-neutral-100 last:border-none tracking-[0.3px] hover:text-red-700 transition-colors duration-150 no-underline"
+                            className="
+                              block font-raleway text-sm font-light text-neutral-500
+                              py-2.5 border-b border-neutral-100 last:border-none
+                              tracking-[0.3px] hover:text-red-700
+                              transition-colors duration-150 no-underline
+                              min-h-[44px] flex items-center
+                            "
                           >
                             {subLink.label}
                           </a>
@@ -92,40 +104,45 @@ export function MobileDrawer({ isOpen, openSub, onToggleSub, onClose }: MobileDr
                     ))}
                   </div>
                 )}
+
               </div>
             )
           })}
         </div>
 
-        {/* Footer */}
+        {/* Footer del drawer */}
         <div className="px-7 pt-5 pb-7 border-t border-neutral-100">
+
+          {/* CTA */}
           <a
             href="#contacto"
             onClick={onClose}
             className="
-              flex items-center justify-center gap-2 w-full
+              flex items-center justify-center gap-2 w-full min-h-[44px]
               bg-red-700 hover:bg-red-800 text-white
-              font-raleway text-[10px] tracking-[2px] uppercase font-semibold
-              py-[14px] transition-colors duration-200 no-underline
+              font-raleway text-xs tracking-[2px] uppercase font-semibold
+              py-3.5 transition-colors duration-200 no-underline
             "
           >
-            <FontAwesomeIcon icon={faCalendarCheck} className="text-xl" />
-              Contactanos
+            <FontAwesomeIcon icon={faCalendarCheck} className="text-xs" />
+            Contacto
           </a>
 
-          <div className="flex items-center gap-2 mt-[14px]">
-            <FontAwesomeIcon icon={faLocationDot} className="text-[13px] text-neutral-300" />
-            <span className="font-raleway text-base text-neutral-400 font-light">
+          {/* Contacto */}
+          <div className="flex items-center gap-2 mt-4 min-h-[44px]">
+            <FontAwesomeIcon icon={faLocationDot} className="text-sm text-neutral-300" />
+            <span className="font-raleway text-sm font-light text-neutral-400">
               Av. Santa Fe 1234, Buenos Aires
             </span>
           </div>
 
-          <div className="flex items-center gap-2 mt-[10px]">
-            <FontAwesomeIcon icon={faPhone} className="text-[13px] text-neutral-300" />
-            <span className="font-raleway text-base text-neutral-400 font-light">
+          <div className="flex items-center gap-2 min-h-[44px]">
+            <FontAwesomeIcon icon={faPhone} className="text-sm text-neutral-300" />
+            <span className="font-raleway text-sm font-light text-neutral-400">
               +54 11 4321-5678
             </span>
           </div>
+
         </div>
       </div>
     </>

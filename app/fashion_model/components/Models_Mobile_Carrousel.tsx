@@ -36,10 +36,10 @@ export function ModelsMobileCarousel() {
 
       {/* Header */}
       <div className="text-center px-4 pt-6 pb-5 bg-white flex-shrink-0">
-        <p className="font-raleway text-[9px] tracking-[3px] uppercase text-red-700 font-medium mb-2">
+        <p className="font-raleway text-xs tracking-[3px] uppercase text-red-700 font-medium mb-2">
           Colección 2025
         </p>
-        <h2 className="font-cormorant text-[28px] font-light text-neutral-900 tracking-wide leading-none">
+        <h2 className="font-cormorant text-3xl font-light text-neutral-900 tracking-wide leading-none">
           Encontrá tu estilo
         </h2>
       </div>
@@ -74,15 +74,13 @@ export function ModelsMobileCarousel() {
               draggable={false}
             />
 
-            {/* Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-            {/* Card text */}
             <div className="absolute bottom-14 left-0 right-0 px-6">
-              <p className="font-raleway text-[8px] tracking-[2.5px] uppercase text-white/60 font-light mb-1.5">
+              <p className="font-raleway text-xs tracking-[2.5px] uppercase text-white/60 font-light mb-1.5">
                 {card.category}
               </p>
-              <h3 className="font-cormorant text-[38px] font-light text-white tracking-wide leading-none">
+              <h3 className="font-cormorant text-5xl font-light text-white tracking-wide leading-none">
                 {card.title}
               </h3>
             </div>
@@ -97,7 +95,7 @@ export function ModelsMobileCarousel() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap font-raleway text-[8px] tracking-[2px] uppercase text-white/30 font-light pointer-events-none"
+              className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap font-raleway text-xs tracking-[2px] uppercase text-white/30 font-light pointer-events-none"
             >
               Deslizá para ver más
             </motion.p>
@@ -111,10 +109,9 @@ export function ModelsMobileCarousel() {
               key={i}
               onClick={() => goTo(i, i > current ? 1 : -1)}
               aria-label={`Ir a slide ${i + 1}`}
-              className={`
-                w-[5px] h-[5px] rounded-full border-none cursor-pointer transition-all duration-300
-                ${i === current ? 'bg-white scale-125' : 'bg-white/35'}
-              `}
+              className={`w-[5px] h-[5px] rounded-full border-none cursor-pointer transition-all duration-300 ${
+                i === current ? 'bg-white scale-125' : 'bg-white/35'
+              }`}
             />
           ))}
         </div>

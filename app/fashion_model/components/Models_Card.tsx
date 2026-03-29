@@ -23,7 +23,6 @@ export function ModelCardItem({ card, index, isVisible }: ModelCardItemProps) {
       }}
       className="relative overflow-hidden cursor-pointer block group aspect-auto h-full sm:aspect-[3/4]"
     >
-      {/* Image */}
       <Image
         src={card.image}
         alt={`${card.category} - ${card.title}`}
@@ -32,15 +31,13 @@ export function ModelCardItem({ card, index, isVisible }: ModelCardItemProps) {
         sizes="(max-width: 768px) 50vw, 25vw"
       />
 
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-      {/* Text */}
       <div className="absolute bottom-0 left-0 right-0 p-3 pb-4 sm:p-4 sm:pb-5 lg:p-5 lg:pb-6">
-        <p className="font-raleway text-[7px] sm:text-[8px] tracking-[2px] sm:tracking-[2.5px] uppercase text-white/60 font-light mb-1 sm:mb-1.5">
+        <p className="font-raleway text-xs uppercase text-white/60 font-light tracking-[2px] sm:tracking-[2.5px] mb-1 sm:mb-1.5">
           {card.category}
         </p>
-        <h3 className="font-cormorant text-[18px] sm:text-[20px] lg:text-[22px] font-light text-white tracking-wide">
+        <h3 className="font-cormorant text-2xl sm:text-3xl font-light text-white tracking-wide">
           {card.title}
         </h3>
       </div>

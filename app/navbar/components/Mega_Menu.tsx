@@ -20,7 +20,9 @@ export function MegaMenu({ data }: MegaMenuProps) {
         {data.columns.map((col, i) => (
           <div key={col.title} className="flex">
             <div className="flex-1 min-w-[200px]">
-              <p className="text-xl tracking-[2px] uppercase text-red-700 font-semibold mb-4 font-raleway">
+
+              {/* Título de columna */}
+              <p className="font-raleway text-xs tracking-[2px] uppercase text-red-700 font-semibold mb-4">
                 {col.title}
               </p>
 
@@ -29,11 +31,11 @@ export function MegaMenu({ data }: MegaMenuProps) {
                   key={link.label}
                   href={link.href}
                   className={`
-                    block text-base  mb-2.5 tracking-[0.3px] font-raleway
-                    transition-colors duration-150
+                    block text-sm mb-2.5 tracking-[0.3px] font-raleway font-light
+                    transition-colors duration-150 no-underline
                     ${link.isViewAll
-                      ? 'text-red-700 underline text-base mt-2'
-                      : 'text-neutral-700 hover:text-red-700'
+                      ? 'text-red-700 underline text-xs mt-2'
+                      : 'text-neutral-600 hover:text-red-700'
                     }
                   `}
                 >
@@ -41,13 +43,6 @@ export function MegaMenu({ data }: MegaMenuProps) {
                 </a>
               ))}
 
-              {col.showImage && (
-                <div className="mt-5 w-40 h-44 bg-gradient-to-br from-pink-200 to-red-200 rounded flex items-end justify-center pb-3">
-                  <span className="text-base tracking-[2px] uppercase text-red-800 font-raleway">
-                    Collection
-                  </span>
-                </div>
-              )}
             </div>
 
             {i < data.columns.length - 1 && (

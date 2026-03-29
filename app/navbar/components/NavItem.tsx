@@ -19,16 +19,14 @@ export function NavItem({ link, openMenu, onToggle, isDark }: NavItemProps) {
   const hasDropdown = !!link.megaMenu
   const isActive = openMenu === link.label
 
-  const textColor = isDark
-    ? 'text-white/90'
-    : 'text-neutral-800'
+  const textColor = isDark ? 'text-white/90' : 'text-neutral-800'
 
   if (hasDropdown) {
     return (
       <button
         onClick={() => onToggle(link.label)}
         className={`
-          flex items-center gap-1.5 text-base tracking-[1.5px] font-medium uppercase
+          flex items-center gap-1.5 text-xs tracking-[1.5px] font-medium uppercase
           cursor-pointer select-none whitespace-nowrap transition-colors duration-250
           ${textColor}
         `}
@@ -39,7 +37,7 @@ export function NavItem({ link, openMenu, onToggle, isDark }: NavItemProps) {
           transition={{ duration: 0.2 }}
           className="opacity-70"
         >
-          <FontAwesomeIcon icon={faChevronDown} className="text-base" />
+          <FontAwesomeIcon icon={faChevronDown} className="text-xs" />
         </motion.span>
       </button>
     )
@@ -51,7 +49,7 @@ export function NavItem({ link, openMenu, onToggle, isDark }: NavItemProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`
-        relative text-base tracking-[1.5px] font-medium uppercase
+        relative text-xs tracking-[1.5px] font-medium uppercase
         whitespace-nowrap pb-0.5 transition-colors duration-250
         ${textColor}
       `}

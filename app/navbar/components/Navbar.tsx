@@ -34,33 +34,33 @@ export function Navbar() {
           className="relative w-full h-[60px] flex items-center px-5 lg:justify-center lg:px-8"
         >
 
-          {/* ── MOBILE / TABLET layout ── */}
+          {/* ── MOBILE / TABLET ── */}
           <div className="flex items-center justify-between w-full lg:hidden">
-
-            {/* Left spacer (for centering logo) */}
-           
-
-            {/* Logo — centered */}
-            <a href="/" className="ms-2 mt-2 text-center no-underline">
-              <span className={`text-start block font-cormorant text-2xl font-light tracking-[5px] transition-colors duration-250 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+            <a href="/" className="no-underline">
+              <span className={`block font-cormorant font-light tracking-[5px] transition-colors duration-250 text-xl sm:text-2xl ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                 VISIONE
               </span>
-              <span className={`block font-raleway text-xs tracking-[3px] font-light mt-0.5 uppercase transition-colors duration-250 ${isDark ? 'text-white/50' : 'text-neutral-500'}`}>
+              <span className={`block font-raleway text-xs font-light mt-0.5 uppercase tracking-[3px] transition-colors duration-250 ${isDark ? 'text-white/50' : 'text-neutral-500'}`}>
                 Óptica & Audición de Autor
               </span>
             </a>
 
-            {/* Right: eye icon + cart + hamburger */}
             <div className="flex items-center gap-3">
-             
+              <div className="relative">
+                <FontAwesomeIcon
+                  icon={faEye}
+                  className={`text-lg transition-colors duration-250 ${isDark ? 'text-white/80' : 'text-neutral-600'}`}
+                />
+                <span className="absolute -top-1.5 -right-1.5 bg-red-700 text-white text-xs w-3.5 h-3.5 rounded-full flex items-center justify-center font-raleway leading-none">
+                  0
+                </span>
+              </div>
               <Hamburger isOpen={mobileOpen} onToggle={toggleMobile} isDark={isDark} />
             </div>
           </div>
 
-          {/* ── DESKTOP layout ── */}
-          <div className="hidden lg:flex items-center mt-8">
-
-            {/* Left links */}
+          {/* ── DESKTOP ── */}
+          <div className="hidden lg:flex items-center">
             <div className="flex items-center gap-8 mr-12">
               {navLinksLeft.map((link) => (
                 <NavItem
@@ -74,17 +74,15 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Logo */}
-            <a href="/" className="text-center no-underline flex-shrink-0 ">
-              <span className={`block font-cormorant text-4xl font-light tracking-[5px] transition-colors duration-250 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+            <a href="/" className="text-center no-underline flex-shrink-0">
+              <span className={`block font-cormorant text-2xl font-light tracking-[5px] transition-colors duration-250 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                 VISIONE
               </span>
-              <span className={`block font-raleway text-base tracking-[3.5px] font-light mt-0.5 uppercase transition-colors duration-250 ${isDark ? 'text-white/60' : 'text-neutral-500'}`}>
+              <span className={`block font-raleway text-xs font-light mt-0.5 uppercase tracking-[3.5px] transition-colors duration-250 ${isDark ? 'text-white/60' : 'text-neutral-500'}`}>
                 Óptica & Audición de Autor
               </span>
             </a>
 
-            {/* Right links */}
             <div className="flex items-center gap-8 ml-12">
               {navLinksRight.map((link) => (
                 <NavItem
@@ -97,11 +95,9 @@ export function Navbar() {
                 />
               ))}
             </div>
-
           </div>
         </motion.nav>
 
-        {/* Desktop MegaMenu */}
         <AnimatePresence>
           {isMenuOpen && activeLink?.megaMenu && (
             <MegaMenu key={openMenu} data={activeLink.megaMenu} />
@@ -109,7 +105,6 @@ export function Navbar() {
         </AnimatePresence>
       </header>
 
-      {/* Mobile Drawer — outside header so it overlays the full page */}
       <MobileDrawer
         isOpen={mobileOpen}
         openSub={openSub}
