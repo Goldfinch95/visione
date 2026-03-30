@@ -20,13 +20,13 @@ export function Footer() {
 
         {/* Col 1 — Brand */}
         <div className="sm:col-span-2 lg:col-span-1">
-          <span className="block font-cormorant text-[22px] lg:text-[24px] font-light text-white tracking-[6px] mb-1.5">
+          <span className="block font-cormorant text-2xl lg:text-3xl font-light text-white tracking-[6px] mb-1.5">
             VISIONE
           </span>
-          <span className="block font-raleway text-[9px] tracking-[3.5px] text-white/35 font-light uppercase mb-5 lg:mb-6">
+          <span className="block font-raleway text-xs tracking-[3.5px] text-white/35 font-light uppercase mb-5 lg:mb-6">
             Óptica & Audición de Autor
           </span>
-          <p className="text-[11.5px] text-white/40 font-light leading-[1.85] mb-6 lg:mb-7 max-w-[320px] lg:max-w-[220px]">
+          <p className="text-sm text-white/40 font-light leading-relaxed mb-6 lg:mb-7 max-w-[320px] lg:max-w-[220px]">
             Más de 20 años ofreciendo las mejores monturas del mundo. Calidad, estilo y atención personalizada en cada visita.
           </p>
           <FooterSocial />
@@ -34,14 +34,14 @@ export function Footer() {
 
         {/* Col 2 — Navegación */}
         <div>
-          <span className="block text-[9px] tracking-[3px] uppercase text-red-700 font-semibold mb-5">
+          <span className="block text-xs tracking-[3px] uppercase text-red-700 font-semibold mb-5">
             Navegación
           </span>
           {footerNavLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="block text-[11.5px] text-white/45 font-light tracking-[0.3px] mb-[11px] transition-colors duration-[180ms] hover:text-white/85 no-underline"
+              className="block text-sm text-white/45 font-light tracking-[0.3px] mb-3 transition-colors duration-[180ms] hover:text-white/85 no-underline min-h-[44px] flex items-center"
             >
               {link.label}
             </a>
@@ -50,13 +50,13 @@ export function Footer() {
 
         {/* Col 3 — Contacto */}
         <div>
-          <span className="block text-[9px] tracking-[3px] uppercase text-red-700 font-semibold mb-5">
+          <span className="block text-xs tracking-[3px] uppercase text-red-700 font-semibold mb-5">
             Contacto
           </span>
           {footerContactRows.map((row, i) => (
-            <div key={i} className="flex items-start gap-[10px] mb-[14px]">
+            <div key={i} className="flex items-start gap-[10px] mb-4">
               <FooterContactIcon icon={row.icon} />
-              <span className="text-[11.5px] text-white/45 font-light leading-[1.6] whitespace-pre-line">
+              <span className="text-sm text-white/45 font-light leading-relaxed whitespace-pre-line">
                 {row.text}
               </span>
             </div>
@@ -72,18 +72,18 @@ export function Footer() {
         px-6 sm:px-10 lg:px-16
         py-5 sm:py-[22px]
       ">
-        <span className="text-[10px] text-white/20 font-light tracking-[0.5px] text-center sm:text-left">
+        <span className="text-xs text-white/20 font-light tracking-[0.5px] text-center sm:text-left">
           © 2025 Visione. Todos los derechos reservados.
         </span>
-        <span className="text-[10px] text-white/20 font-light tracking-[0.5px] flex items-center gap-1">
+        <span className="text-xs text-white/20 font-light tracking-[0.5px] flex items-center gap-1">
           hecho con{' '}
-          <span className="transition-colors duration-200 cursor-default hover:text-red-700">❤</span>
+          <span className="text-white/20 sm:text-white/20 transition-colors duration-200 cursor-default sm:hover:text-red-700">❤</span>
           {' '}por el equipo de{' '}
           <a
             href="https://undevcode.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/20 font-medium tracking-[0.8px] no-underline transition-colors duration-200 hover:text-red-700"
+            className="text-white/20 sm:text-white/20 font-medium tracking-[0.8px] no-underline transition-colors duration-200 sm:hover:text-red-700"
           >
             UNDEVCODE
           </a>
